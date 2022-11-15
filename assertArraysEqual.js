@@ -14,5 +14,4 @@ const assertArraysEqual = function(arrayOne, arrayTwo) {
 
   if (result) return console.log('\033[42m', `⭐️ Assertion Passed:`, '\033[0m', `${arrayOne} === ${arrayTwo}`);
   console.log('\033[41m', `🚨 Assertion Failed:`, '\033[0m', `${arrayOne} !== ${arrayTwo}`);
-
 };
