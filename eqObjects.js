@@ -23,10 +23,12 @@ const eqObjects = function(object1, object2) {
   const object2Keys = Object.keys(object2);
 
   if (object1Keys.length !== object2Keys.length) return false; // stop function if different key quantity
-  
+
   for (const key of object1Keys) {
-    console.log(object1Keys, " ", object2Keys, " ", key)
-    console.log(object1[key], " ", object2[key])
+    if (Array.isArray(object1[key])) { // if value is an array, use eqArrays to compare
+      if (eqArrays(object1[key], object2[key])) continue;
+      return false;
+    }
     if (object1[key] !== object2[key]) return false; // stop once different key is found
     continue;
   }
@@ -47,5 +49,5 @@ const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
 const cd2 = { c: "1", d: ["2", 3, 4] };
 
-assertEqual(eqObjects(cd, dc),true) // both have array values in key d
-assertEqual(eqObjects(cd, cd2),false) // cd2 has an extra value in d (address this using .length)
+assertEqual(eqObjects(cd, dc), true); // both have array values in key d
+assertEqual(eqObjects(cd, cd2), false); // cd2 has an extra value in d (address this using .length)
