@@ -9,8 +9,9 @@ Functions used to compare
 ``` javascript
 eqArrays(arrayOne, arrayTwo)
 ```
-- Returns `true` or `false` after checking if the arrays are equal (does not currently support nested arrays)
-- `arrayOne` and `arrayTwo` can be given any array argument
+- Returns `true` or `false` after checking if the arrays are equal
+  - *Does not currently support nested arrays
+- `arrayOne` and `arrayTwo` can be given any array arguments
 
 <!-- assertEqual -->
 
@@ -129,3 +130,18 @@ findKeyByValue(object, value)
 
 - `findKeyByValue(bestTVShowsByGenre, "Brooklyn Nine-Nine")` => `"comedy"`
 - `findKeyByValue(bestTVShowsByGenre, "Scandal")` => `undefined`
+
+<!-- EQOBJECTS -->
+
+``` javascript
+eqObjects(object1, object2)
+```
+- Given two `object` arguments of varying lengths/key-value pairs, perform a deep* comparison and return `true` or `false` depending on results
+  - *Currently only supports primitive values or single-level arrays, no nested arrays or objects as values
+
+> const cd = { c: "1", d: ["2", 3] };\
+const dc = { d: ["2", 3], c: "1" };\
+const cd2 = { c: "1", d: ["2", 3, 4] };
+
+- `eqObjects(cd, dc)` => `true`
+- `eqObjects(cd, cd2)` => `false`
