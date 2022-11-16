@@ -6,14 +6,27 @@ const assertEqual = function(actual, expected) {
   }
 };
 
+const eqArrays = function(arrayOne, arrayTwo) {
+  if (arrayOne.length !== arrayTwo.length) return false;
+
+  for (let i = 0; i < arrayOne.length; i++) {
+    if (arrayOne[i] !== arrayTwo[i]) return false;
+  }
+
+  return true;
+};
+
 // Returns true if both objects have identical keys with identical values.
 // Otherwise you get back a big fat false!
 const eqObjects = function(object1, object2) {
   const object1Keys = Object.keys(object1);
   const object2Keys = Object.keys(object2);
-  if (object1Keys.length !== object2Keys.length) return false; // stop function if different key quantity
 
-  for (const key in object1Keys) {
+  if (object1Keys.length !== object2Keys.length) return false; // stop function if different key quantity
+  
+  for (const key of object1Keys) {
+    console.log(object1Keys, " ", object2Keys, " ", key)
+    console.log(object1[key], " ", object2[key])
     if (object1[key] !== object2[key]) return false; // stop once different key is found
     continue;
   }
@@ -21,9 +34,18 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-const abc = { a: "1", b: "2", c: "3" };
+// Primitive tests
+// const ab = { a: "1", b: "2" };
+// const ba = { b: "2", a: "1" };
+// const abc = { a: "1", b: "2", c: "3" };
 
-assertEqual(eqObjects(ab,ba),true)
-assertEqual(eqObjects(ab,abc),false)
+// assertEqual(eqObjects(ab,ba),true)
+// assertEqual(eqObjects(ab,abc),false)
+
+// Array tests
+const cd = { c: "1", d: ["2", 3] };
+const dc = { d: ["2", 3], c: "1" };
+const cd2 = { c: "1", d: ["2", 3, 4] };
+
+assertEqual(eqObjects(cd, dc),true) // both have array values in key d
+assertEqual(eqObjects(cd, cd2),false) // cd2 has an extra value in d (address this using .length)
