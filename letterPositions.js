@@ -28,6 +28,6 @@ const letterPositions = function(sentence) {
   return results;
 };
 
-result1 = letterPositions("lighthouse in the house");
+// result1 = letterPositions("lighthouse in the house");
 
-assertArraysEqual(result1.h,[3, 5, 15, 18]);
+// assertArraysEqual(result1.h,[3, 5, 15, 18]);
