@@ -2,7 +2,7 @@
 
 ## Equality checks
 
-Functions used to compare
+Functions used to compare two values (primitive values, arrays*, objects*)
 
 <!-- eqArrays -->
 
@@ -13,14 +13,27 @@ eqArrays(arrayOne, arrayTwo)
   - *Does not currently support nested arrays
 - `arrayOne` and `arrayTwo` can be given any array arguments
 
+<!-- eqObjects -->
+
+``` javascript
+eqObjects(object1, object2)
+```
+- Returns `true` or `false` after checking if two objects are equal
+  - *Does not currently support nested objects or objects that have a nested array as a value
+- `object1` and `object2` can be given any array arguments
+
+## Assertion functions
+
+Functions used to return `Assertion Passed` or `Assertion Failed` dependent on a test (actual) and the desired result (expected)
+
 <!-- assertEqual -->
 
 ``` javascript
 assertEqual(actual, expected)
 ```
 - Returns `Assertion Passed` or `Assertion Failed` after checking if the test (actual) matches the expected output (expected)
-- `actual` can be given any argument (see below for Array variant)
-- `expected` is a hard-coded output expectation
+- `actual` can be given any argument (see below for Array and Object variants)
+- `expected` is a hard-coded result
 
 <!-- assertArraysEqual -->
 
@@ -29,7 +42,16 @@ assertArraysEqual(actual, expected)
 ```
 - Returns `Assertion Passed` or `Assertion Failed` after checking if the test (actual) matches the expected output (expected)
 - `actual` can be given any array or function that returns an array
-- `expected` is a hard-coded output expectation
+- `expected` is a hard-coded array expectation
+
+<!-- assertObjectsEqual -->
+
+``` javascript
+assertObjectsEqual(actual, expected)
+```
+- Returns `Assertion Passed` or `Assertion Failed` after checking if the test (actual) matches the expected output (expected)
+- `actual` can be given any object or function that returns an object
+- `expected` is a hard-coded object expectation
 
 ## Array functions
 
@@ -130,18 +152,3 @@ findKeyByValue(object, value)
 
 - `findKeyByValue(bestTVShowsByGenre, "Brooklyn Nine-Nine")` => `"comedy"`
 - `findKeyByValue(bestTVShowsByGenre, "Scandal")` => `undefined`
-
-<!-- EQOBJECTS -->
-
-``` javascript
-eqObjects(object1, object2)
-```
-- Given two `object` arguments of varying lengths/key-value pairs, perform a deep* comparison and return `true` or `false` depending on results
-  - *Currently only supports primitive values or single-level arrays, no nested arrays or objects as values
-
-> const cd = { c: "1", d: ["2", 3] };\
-const dc = { d: ["2", 3], c: "1" };\
-const cd2 = { c: "1", d: ["2", 3, 4] };
-
-- `eqObjects(cd, dc)` => `true`
-- `eqObjects(cd, cd2)` => `false`
