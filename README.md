@@ -102,7 +102,7 @@ countLetters(string)
   - Spaces are excluded/trimmed from the input
 - `countLetters("Hello")` => `{ h: 1, e: 1, l: 2, o: 1 }`
 
-<!-- COUNTLETTERS -->
+<!-- LETTERPOSITIONS -->
 
 ``` javascript
 letterPositions(string)
@@ -111,3 +111,21 @@ letterPositions(string)
   - Spaces are excluded from the output, but do contribute to the positions
 - `letterPositions("hello")` => `{ h: [0], e: [1], l: [2,3], o: [4] }`
 - `letterPositions("lighthouse in the house")` => `{ l: [0], i: [1, 11], g: [2], h: [3, 5, 15, 18], t: [4, 14], o: [6, 19], u: [7, 20], s: [8, 21], e: [9, 16, 22], n: [12] }`
+
+<!-- FINDKEYBYVALUE -->
+
+``` javascript
+findKeyByValue(object, value)
+```
+- Given an `object` of single key/value pairs, this will return the first key where the value is found
+  - If no matching key is found for the value, return `undefined`
+
+> const bestTVShowsByGenre = {\
+   &emsp; sci_fi: "The Expanse",\
+   &emsp; comedy: "Brooklyn Nine-Nine",\
+   &emsp; drama: "The Wire",\
+   &emsp; space: "The Expanse"\
+ }
+
+- `findKeyByValue(bestTVShowsByGenre, "Brooklyn Nine-Nine")` => `"comedy"`
+- `findKeyByValue(bestTVShowsByGenre, "Scandal")` => `undefined`
