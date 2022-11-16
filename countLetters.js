@@ -10,8 +10,9 @@ const countLetters = function(string) {
   const output = {};
   for (const letter of string) {
     value = letter.toLowerCase();
-    console.log(value);
+    !output[value] ? output[value] = 1 : output[value]++;
   }
+  console.log(output);
 }
 
 const result1 = countLetters("Hello");
