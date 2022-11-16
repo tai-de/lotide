@@ -9,13 +9,13 @@ const assertEqual = function(actual, expected) {
 const countLetters = function(string) {
   const output = {};
   for (const letter of string) {
-    value = letter.toLowerCase();
+    let value = letter.toLowerCase();
     !output[value] ? output[value] = 1 : output[value]++;
   }
-  console.log(output);
-}
+  return output;
+};
 
-const result1 = countLetters("Hello");
+// const result1 = countLetters("Hello");
 
 // assertEqual(result1.h,1);
 // assertEqual(result1.l,2);
