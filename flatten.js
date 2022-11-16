@@ -1,7 +1,7 @@
 const assertArraysEqual = function(arrayOne, arrayTwo) {
   let result = eqArrays(arrayOne, arrayTwo);
-  if (result) return console.log('\033[42m', `⭐️ Assertion Passed:`, '\033[0m', `${arrayOne} === ${arrayTwo}`);
-  console.log('\033[41m', `🚨 Assertion Failed:`, '\033[0m', `${arrayOne} !== ${arrayTwo}`);
+  if (result) return console.log('\033[42m', `### Assertion Passed ###`, '\t\033[0m', `${arrayOne} \t === \t ${arrayTwo}`);
+  console.log('\033[41m', `### Assertion Failed ###`, '\t\033[0m', `${arrayOne} \t !== \t ${arrayTwo}`);
 };
 
 const eqArrays = function(arrayOne, arrayTwo) {
