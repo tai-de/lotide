@@ -91,4 +91,13 @@ countOnly(array, object)
 ```
 - An object will be returned containing counts of everything within the array that the `object` parameter listed as `true`
   - If the `object` lists `true` for a key that does not exist in the array, include an undefined value in the object output
-- `countOnly(["Jason", "Jason", "Fang", "Agouhanna"], { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });` => `{ Jason: 2, Karima: undefined, Fang: 1}`
+- `countOnly(["Jason", "Jason", "Fang", "Agouhanna"], { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false })` => `{ Jason: 2, Karima: undefined, Fang: 1 }`
+
+<!-- COUNTLETTERS -->
+
+``` javascript
+countLetters(string)
+```
+- An object will be returned containing counts of all unique letters in the `string`
+  - Spaces are excluded/trimmed from the input
+- `countLetters("Hello")` => `{ h:1, e:1, l:2, o:1 }`
