@@ -10,7 +10,7 @@ Functions used to compare two values (primitive values, arrays*, objects*)
 eqArrays(arrayOne, arrayTwo)
 ```
 - Returns `true` or `false` after checking if the arrays are equal
-  - *Does not currently support nested arrays
+  - *Does not currently support nested arrays, or if an array contains an object
 - `arrayOne` and `arrayTwo` can be given any array arguments
 
 <!-- eqObjects -->
