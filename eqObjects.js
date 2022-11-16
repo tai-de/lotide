@@ -16,27 +16,25 @@ const eqArrays = function(arrayOne, arrayTwo) {
   return true;
 };
 
-// Returns true if both objects have identical keys with identical values.
-// Otherwise you get back a big fat false!
 const eqObjects = function(object1, object2) {
   const object1Keys = Object.keys(object1);
   const object2Keys = Object.keys(object2);
 
-  if (object1Keys.length !== object2Keys.length) return false; // stop function if different key quantity
+  if (object1Keys.length !== object2Keys.length) return false; // stop function if different number of keys
 
-  for (const key of object1Keys) {
-    if (Array.isArray(object1[key])) { // if value is an array, use eqArrays to compare
-      if (eqArrays(object1[key], object2[key])) continue;
-      return false;
+  for (const key of object1Keys) { // begin loop through keys
+    if (Array.isArray(object1[key]) || Array.isArray(object2[key])) { // if either key holds an array, use eqArrays to compare
+      if (eqArrays(object1[key], object2[key])) continue; // if results from eqArrays are OK, continue to next key
+      return false; // otherwise stop the function
     }
-    if (object1[key] !== object2[key]) return false; // stop once different key is found
-    continue;
+    if (object1[key] !== object2[key]) return false; // if not an array and primitive value, stop once differing value is found
+    continue; // otherwise continue to next key
   }
 
   return true;
 };
 
-// Primitive tests
+// // Primitive tests
 // const ab = { a: "1", b: "2" };
 // const ba = { b: "2", a: "1" };
 // const abc = { a: "1", b: "2", c: "3" };
@@ -44,10 +42,10 @@ const eqObjects = function(object1, object2) {
 // assertEqual(eqObjects(ab,ba),true)
 // assertEqual(eqObjects(ab,abc),false)
 
-// Array tests
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-const cd2 = { c: "1", d: ["2", 3, 4] };
+// // Array tests
+// const cd = { c: "1", d: ["2", 3] };
+// const dc = { d: ["2", 3], c: "1" };
+// const cd2 = { c: "1", d: ["2", 3, 4] };
 
-assertEqual(eqObjects(cd, dc), true); // both have array values in key d
-assertEqual(eqObjects(cd, cd2), false); // cd2 has an extra value in d (address this using .length)
+// assertEqual(eqObjects(cd, dc), true); // both have array values in key d
+// assertEqual(eqObjects(cd, cd2), false); // cd2 has an extra value in d
