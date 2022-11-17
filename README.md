@@ -1,6 +1,12 @@
 # Lotide JS Library
 
-## Equality checks
+Lodash clone for LHL
+
+---
+
+## ********** Equality checks **********
+
+---
 
 Functions used to compare two values (primitive values, arrays*, objects*)
 
@@ -19,41 +25,46 @@ eqArrays(arrayOne, arrayTwo)
 eqObjects(object1, object2)
 ```
 - Returns `true` or `false` after checking if two objects are equal
-  - *Does not currently support nested objects or objects that have a nested array as a value
+  - *Does not currently support nested objects or objects that have a nested array as a value. (Can support a first-levle object value being a non-nested array)
 - `object1` and `object2` can be given any array arguments
 
-## Assertion functions
+---
 
-Functions used to return `Assertion Passed` or `Assertion Failed` dependent on a test (actual) and the desired result (expected)
+## ********** Assertion functions **********
+
+---
+
+Functions used to return `Assertion Passed` or `Assertion Failed` whether two inputs are equal.
 
 <!-- assertEqual -->
 
 ``` javascript
 assertEqual(actual, expected)
 ```
-- Returns `Assertion Passed` or `Assertion Failed` after checking if the test (actual) matches the expected output (expected)
-- `actual` can be given any argument (see below for Array and Object variants)
-- `expected` is a hard-coded result
+- Returns `Assertion Passed` or `Assertion Failed` after checking if the passed arguments are equal.
+- `actual` and `expected` can be given any argument (primitive values. see below for Array and Object variants)
 
 <!-- assertArraysEqual -->
 
 ``` javascript
 assertArraysEqual(actual, expected)
 ```
-- Returns `Assertion Passed` or `Assertion Failed` after checking if the test (actual) matches the expected output (expected)
-- `actual` can be given any array or function that returns an array
-- `expected` is a hard-coded array expectation
+- Returns `Assertion Passed` or `Assertion Failed` after checking if the two arrays are equal.
+- `actual` and `expected` can be given any two arrays as arguments (\*limitations based on `eqArrays` function above)
 
 <!-- assertObjectsEqual -->
 
 ``` javascript
 assertObjectsEqual(actual, expected)
 ```
-- Returns `Assertion Passed` or `Assertion Failed` after checking if the test (actual) matches the expected output (expected)
-- `actual` can be given any object or function that returns an object
-- `expected` is a hard-coded object expectation
+- Returns `Assertion Passed` or `Assertion Failed` after checking if the two objects are equal.
+- `actual` and `expected` can be given any two objects as arguments (\*limitations based on `eqObjects` function above)
 
-## Array functions
+---
+
+## ********** Array functions **********
+
+---
 
 Functions used to manipulate or parse an array
 
@@ -103,7 +114,11 @@ without(array, itemsToRemove)
 - `without([1, 2, 3], [1])` => `[2, 3]`
 - `without(["1", "2", "3"], [1, 2, "3"])` => `["1", "2"]`
 
-## Object functions
+---
+
+## ********** Object functions **********
+
+---
 
 Functions used to manipulate or parse an array
 
