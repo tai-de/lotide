@@ -114,6 +114,14 @@ without(array, itemsToRemove)
 - `without([1, 2, 3], [1])` => `[2, 3]`
 - `without(["1", "2", "3"], [1, 2, "3"])` => `["1", "2"]`
 
+<!-- MAP -->
+
+``` javascript
+map(array, callBackFn)
+```
+- Mimics .map() behavior and applies the `callBackFn` argument against the `array` items
+- `map(["never", "gonna", "give", "you", "up"], word => word[0])` = `["n", "g", "g", "y", "u"]`
+
 ---
 
 ## ********** Object functions **********
