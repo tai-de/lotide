@@ -185,15 +185,24 @@ countLetters(string)
   - Spaces are excluded/trimmed from the input
 - `countLetters("Hello")` => `{ h: 1, e: 1, l: 2, o: 1 }`
 
-<!-- LETTERPOSITIONS -->
+<!-- FINDKEY -->
 
 ``` javascript
-letterPositions(string)
+findKey(object, callback)
 ```
-- An object will be returned containing the index positions of all unique letters in the `string`
-  - Spaces are excluded from the output, but do contribute to the positions
-- `letterPositions("hello")` => `{ h: [0], e: [1], l: [2,3], o: [4] }`
-- `letterPositions("lighthouse in the house")` => `{ l: [0], i: [1, 11], g: [2], h: [3, 5, 15, 18], t: [4, 14], o: [6, 19], u: [7, 20], s: [8, 21], e: [9, 16, 22], n: [12] }`
+- Given an `object` of single key/value pairs, this will return the first key where the value is found
+  - If no matching key is found for the value, return `undefined`
+
+> const data = {\
+  &emsp; "Blue Hill": { stars: 1 },\
+  &emsp; "Akaleri":   { stars: 3 },\
+  &emsp; "noma":      { stars: 2 },\
+  &emsp; "elBulli":   { stars: 3 },\
+  &emsp; "Ora":       { stars: 2 },\
+  &emsp; "Akelarre":  { stars: 3 }\
+}
+
+- `findKey(data, x => x.stars === 2)` => `"noma"`
 
 <!-- FINDKEYBYVALUE -->
 
@@ -212,3 +221,13 @@ findKeyByValue(object, value)
 
 - `findKeyByValue(bestTVShowsByGenre, "Brooklyn Nine-Nine")` => `"comedy"`
 - `findKeyByValue(bestTVShowsByGenre, "Scandal")` => `undefined`
+
+<!-- LETTERPOSITIONS -->
+
+``` javascript
+letterPositions(string)
+```
+- An object will be returned containing the index positions of all unique letters in the `string`
+  - Spaces are excluded from the output, but do contribute to the positions
+- `letterPositions("hello")` => `{ h: [0], e: [1], l: [2,3], o: [4] }`
+- `letterPositions("lighthouse in the house")` => `{ l: [0], i: [1, 11], g: [2], h: [3, 5, 15, 18], t: [4, 14], o: [6, 19], u: [7, 20], s: [8, 21], e: [9, 16, 22], n: [12] }`
