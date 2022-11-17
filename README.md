@@ -8,7 +8,7 @@ Lodash clone for LHL
 
 ---
 
-Functions used to compare two values (primitive values, arrays*, objects*)
+Functions used to compare, returning true or false.
 
 <!-- eqArrays -->
 
@@ -34,7 +34,7 @@ eqObjects(object1, object2)
 
 ---
 
-Functions used to return `Assertion Passed` or `Assertion Failed` whether two inputs are equal.
+Functions used to return `Assertion Passed` or `Assertion Failed` whether two arguments are equal.
 
 <!-- assertEqual -->
 
@@ -120,7 +120,7 @@ without(array, itemsToRemove)
 
 ---
 
-Functions used to manipulate or parse an array
+Functions used to manipulate or parse an object
 
 <!-- COUNTONLY -->
 
