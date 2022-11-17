@@ -2,11 +2,15 @@
 
 Lodash clone for LHL
 
+<br />
+
 ---
 
 ## ********** Equality checks **********
 
 ---
+
+<br />
 
 Functions used to compare, returning true or false.
 
@@ -28,11 +32,17 @@ eqObjects(object1, object2)
   - *Does not currently support nested objects or objects that have a nested array as a value. (Can support a first-levle object value being a non-nested array)
 - `object1` and `object2` can be given any array arguments
 
+<br />
+<br />
+<br />
+
 ---
 
 ## ********** Assertion functions **********
 
 ---
+
+<br />
 
 Functions used to return `Assertion Passed` or `Assertion Failed` whether two arguments are equal.
 
@@ -60,11 +70,17 @@ assertObjectsEqual(actual, expected)
 - Returns `Assertion Passed` or `Assertion Failed` after checking if the two objects are equal.
 - `actual` and `expected` can be given any two objects as arguments (\*limitations based on `eqObjects` function above)
 
+<br />
+<br />
+<br />
+
 ---
 
 ## ********** Array functions **********
 
 ---
+
+<br />
 
 Functions used to manipulate or parse an array
 
@@ -122,11 +138,32 @@ map(array, callBackFn)
 - Mimics .map() behavior and applies the `callBackFn` argument against the `array` items
 - `map(["never", "gonna", "give", "you", "up"], word => word[0])` = `["n", "g", "g", "y", "u"]`
 
+<!-- TAKEUNTIL -->
+
+``` javascript
+takeUntil(array, callBackFn)
+```
+- Loops through a given `array` until the condition in the `callBackFn` returns true. A new array is returned with the preceeding values.
+
+> const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
+
+- `takeUntil(data1, x => x < 0)` => `[1, 2, 5, 7, 2]`
+
+> const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood""];
+
+- `takeUntil(data1, x => x < 0)` => `['I've', 'been', 'to', 'Hollywood']`
+
+<br />
+<br />
+<br />
+
 ---
 
 ## ********** Object functions **********
 
 ---
+
+<br />
 
 Functions used to manipulate or parse an object
 

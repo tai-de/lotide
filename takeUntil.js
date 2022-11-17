@@ -15,30 +15,21 @@ const eqArrays = function(arrayOne, arrayTwo) {
   return true;
 };
 
-// slice the array from start until the callback function returns true aka, its waiting for a stop 
-// only provide the callback with the current item
-
 const takeUntil = function(array, callback) {
-  // ...
-}
+  const newArray = [];
+  for (const element of array) {
+    if (callback(element)) return newArray;
+    newArray.push(element);
+  }
+  return newArray;
+};
 
+// //TESTS
 
+// const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
+// assertArraysEqual(takeUntil(data1, x => x < 0), [1, 2, 5, 7, 2]);
 
+// console.log('---');
 
-/// TESTS
-
-const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
-const results1 = takeUntil(data1, x => x < 0);
-console.log(results1);
-
-console.log('---');
-
-const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
-const results2 = takeUntil(data2, x => x === ',');
-console.log(results2);
-
-// OUTPUTS
-
-[ 1, 2, 5, 7, 2 ]
---
-[ 'I\'ve', 'been', 'to', 'Hollywood' ]
+// const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
+// assertArraysEqual(takeUntil(data2, x => x === ','), ['I\'ve', 'been', 'to', 'Hollywood']);
