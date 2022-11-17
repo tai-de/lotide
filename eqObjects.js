@@ -1,4 +1,4 @@
-const assertObjectsEqual = function(actual, expected) {
+const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log('\033[42m', `### Assertion Passed ###`, '\t\033[0m', `${actual} \t === \t ${expected}`);
   } else {
