@@ -14,7 +14,6 @@ const eqObjects = function(object1, object2) {
       return false;
     }
     if (object1[key] !== object2[key]) return false; // if not an array and primitive value, stop once differing value is found
-    continue; // otherwise continue to next key
   }
 
   return true;
@@ -40,5 +39,5 @@ const eqObjects = function(object1, object2) {
 
 // console.log(eqObjects({ a: { z: 1, y: { m: [1, { a: 2 }] } }, b: 2 }, { a: { y: { m: [1, { a: 2 } ] }, z: 1 }, b: 2 })) // => true
 
-// console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })) // => false
-// console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 })) // => false
+// console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { y: 0, z: 1 }, b: 2 })) // => false
+// console.log(eqObjects({ a: 1, b: 2 }, { a: 1, b: 2 })) // => false
