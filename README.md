@@ -20,7 +20,6 @@ Functions used to compare, returning true or false.
 eqArrays(arrayOne, arrayTwo)
 ```
 - Returns `true` or `false` after checking if the arrays are equal
-  - *Does not currently support nested arrays, or if an array contains an object
 - `arrayOne` and `arrayTwo` can be given any array arguments
 
 <!-- eqObjects -->
@@ -28,8 +27,7 @@ eqArrays(arrayOne, arrayTwo)
 ``` javascript
 eqObjects(object1, object2)
 ```
-- Returns `true` or `false` after checking if two objects are equal
-  - *Does not currently support nested objects or objects that have a nested array as a value. (Can support a first-levle object value being a non-nested array)
+- Returns `true` or `false` after checking if two objects are equa
 - `object1` and `object2` can be given any array arguments
 
 <br />

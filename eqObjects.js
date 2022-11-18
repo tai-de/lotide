@@ -27,6 +27,10 @@ const eqObjects = function(object1, object2) {
       if (eqArrays(object1[key], object2[key])) continue; // if results from eqArrays are OK, continue to next key
       return false; // otherwise stop the function
     }
+    if ((typeof object1[key] === 'object' && !Array.isArray(object1[key]) && object1[key] !== null) || (typeof object2[key] === 'object' && !Array.isArray(object2[key]) && object2[key] !== null)) {
+      if (eqObjects(object1[key], object2[key])) continue; // if results from recursion are OK, continue
+      return false; 
+    }
     if (object1[key] !== object2[key]) return false; // if not an array and primitive value, stop once differing value is found
     continue; // otherwise continue to next key
   }
@@ -49,3 +53,10 @@ const eqObjects = function(object1, object2) {
 
 // assertEqual(eqObjects(cd, dc), true); // both have array values in key d
 // assertEqual(eqObjects(cd, cd2), false); // cd2 has an extra value in d
+
+// Recursive tests
+
+// console.log(eqObjects({ a: { z: 1, y: { m: [1, { a: 2 }] } }, b: 2 }, { a: { y: { m: [1, { a: 2 } ] }, z: 1 }, b: 2 })) // => true
+
+// console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })) // => false
+// console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 })) // => false
