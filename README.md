@@ -20,6 +20,7 @@ Functions used to compare, returning true or false.
 eqArrays(arrayOne, arrayTwo)
 ```
 - Returns `true` or `false` after checking if the arrays are equal
+  - Supports nested arrays & array items being objects using recursion
 - `arrayOne` and `arrayTwo` can be given any array arguments
 
 <!-- eqObjects -->
@@ -27,7 +28,8 @@ eqArrays(arrayOne, arrayTwo)
 ``` javascript
 eqObjects(object1, object2)
 ```
-- Returns `true` or `false` after checking if two objects are equa
+- Returns `true` or `false` after checking if two objects are equal
+  - Supports arrays as object values & nested objects using recursion
 - `object1` and `object2` can be given any array arguments
 
 <br />
@@ -58,7 +60,7 @@ assertEqual(actual, expected)
 assertArraysEqual(actual, expected)
 ```
 - Returns `Assertion Passed` or `Assertion Failed` after checking if the two arrays are equal.
-- `actual` and `expected` can be given any two arrays as arguments (\*limitations based on `eqArrays` function above)
+- `actual` and `expected` can be given any two arrays as arguments
 
 <!-- assertObjectsEqual -->
 
@@ -66,7 +68,7 @@ assertArraysEqual(actual, expected)
 assertObjectsEqual(actual, expected)
 ```
 - Returns `Assertion Passed` or `Assertion Failed` after checking if the two objects are equal.
-- `actual` and `expected` can be given any two objects as arguments (\*limitations based on `eqObjects` function above)
+- `actual` and `expected` can be given any two objects as arguments
 
 <br />
 <br />
