@@ -151,8 +151,9 @@ countOnly(array, object)
 ``` javascript
 flatten(array)
 ```
-- Returns a new array after doing a single-level flattening of any nested values/arrays
+- Returns a new array after doing a flattening of any nested values/arrays
 - `flatten([1, 2, [3, 4], 5, [6]])` => `[1, 2, 3, 4, 5, 6]`
+- `flatten([1, 2, [3, 4, [5, 6, [7, 8, [[[[[9, [10]]]]]]]]]])` => `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`
 
 <!-- HEAD -->
 
