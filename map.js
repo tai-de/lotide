@@ -7,6 +7,3 @@ const map = function(array, callback) {
 };
 
 module.exports = map;
-
-// const words = ["never", "gonna", "give", "you", "up"];
-// assertArraysEqual(map(words, word => word[0]), ["n", "g", "g", "y", "u"]);

@@ -1,6 +1,6 @@
 {
-  "name": "lotide",
-  "version": "1.0.0",
+  "name": "@tai-de/lotide",
+  "version": "1.0.1",
   "description": "Lodash clone for LHL",
   "main": "assertArraysEqual.js",
   "directories": {
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/tai-de/lotide.git"
   },
-  "author": "",
+  "author": "Tai Delisle",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tai-de/lotide/issues"

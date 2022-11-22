@@ -1,6 +1,26 @@
 # Lotide JS Library
 
-Lodash clone for LHL
+A mini clone of the [Lodash](https://lodash.com) library.
+
+## Purpose
+
+**_BEWARE:_ This library was published for learning purposes. It is _not_ intended for use in production-grade software.**
+
+This project was created and published by me as part of my learnings at Lighthouse Labs.
+
+## Usage
+
+**Install it:**
+
+`npm install @tai-de/lotide`
+
+**Require it:**
+
+`const _ = require('@tai-de/lotide');`
+
+**Call it:**
+
+`const results = _.tail([1, 2, 3]) // => [2, 3]`
 
 <br />
 
@@ -82,7 +102,49 @@ assertObjectsEqual(actual, expected)
 
 <br />
 
+Functions used to manipulate or parse a string
+
+<!-- COUNTLETTERS -->
+
+``` javascript
+countLetters(string)
+```
+- An object will be returned containing counts of all unique letters in the `string`
+  - Spaces are excluded/trimmed from the input
+- `countLetters("Hello")` => `{ h: 1, e: 1, l: 2, o: 1 }`
+
+<!-- LETTERPOSITIONS -->
+
+``` javascript
+letterPositions(string)
+```
+- An object will be returned containing the index positions of all unique letters in the `string`
+  - Spaces are excluded from the output, but do contribute to the positions
+- `letterPositions("hello")` => `{ h: [0], e: [1], l: [2,3], o: [4] }`
+- `letterPositions("lighthouse in the house")` => `{ l: [0], i: [1, 11], g: [2], h: [3, 5, 15, 18], t: [4, 14], o: [6, 19], u: [7, 20], s: [8, 21], e: [9, 16, 22], n: [12] }`
+
+<br />
+<br />
+<br />
+
+---
+
+## ********** Array functions **********
+
+---
+
+<br />
+
 Functions used to manipulate or parse an array
+
+<!-- COUNTONLY -->
+
+``` javascript
+countOnly(array, object)
+```
+- An object will be returned containing counts of everything within the array that the `object` parameter listed as `true`
+  - If the `object` lists `true` for a key that does not exist in the array, include an undefined value in the object output
+- `countOnly(["Jason", "Jason", "Fang", "Agouhanna"], { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false })` => `{ Jason: 2, Karima: undefined, Fang: 1 }`
 
 <!-- FLATTEN -->
 
@@ -167,24 +229,6 @@ takeUntil(array, callBackFn)
 
 Functions used to manipulate or parse an object
 
-<!-- COUNTONLY -->
-
-``` javascript
-countOnly(array, object)
-```
-- An object will be returned containing counts of everything within the array that the `object` parameter listed as `true`
-  - If the `object` lists `true` for a key that does not exist in the array, include an undefined value in the object output
-- `countOnly(["Jason", "Jason", "Fang", "Agouhanna"], { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false })` => `{ Jason: 2, Karima: undefined, Fang: 1 }`
-
-<!-- COUNTLETTERS -->
-
-``` javascript
-countLetters(string)
-```
-- An object will be returned containing counts of all unique letters in the `string`
-  - Spaces are excluded/trimmed from the input
-- `countLetters("Hello")` => `{ h: 1, e: 1, l: 2, o: 1 }`
-
 <!-- FINDKEY -->
 
 ``` javascript
@@ -221,13 +265,3 @@ findKeyByValue(object, value)
 
 - `findKeyByValue(bestTVShowsByGenre, "Brooklyn Nine-Nine")` => `"comedy"`
 - `findKeyByValue(bestTVShowsByGenre, "Scandal")` => `undefined`
-
-<!-- LETTERPOSITIONS -->
-
-``` javascript
-letterPositions(string)
-```
-- An object will be returned containing the index positions of all unique letters in the `string`
-  - Spaces are excluded from the output, but do contribute to the positions
-- `letterPositions("hello")` => `{ h: [0], e: [1], l: [2,3], o: [4] }`
-- `letterPositions("lighthouse in the house")` => `{ l: [0], i: [1, 11], g: [2], h: [3, 5, 15, 18], t: [4, 14], o: [6, 19], u: [7, 20], s: [8, 21], e: [9, 16, 22], n: [12] }`

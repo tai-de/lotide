@@ -10,9 +10,4 @@ const countLetters = function(string) {
   return output;
 };
 
-// const result1 = countLetters("Hello");
-
-// assertEqual(result1.h,1);
-// assertEqual(result1.l,2);
-
 module.exports = countLetters;
