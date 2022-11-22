@@ -96,7 +96,7 @@ assertObjectsEqual(actual, expected)
 
 ---
 
-## ********** Array functions **********
+## ********** String functions **********
 
 ---
 
